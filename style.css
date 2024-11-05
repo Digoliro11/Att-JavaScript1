@@ -23,4 +23,10 @@ body{
     border-radius: 10px;
     background-color: rgb(131, 131, 131);
     color: #fafafa;
+    border: 1px solid gray;
+    transition: .2s;
+}
+
+.input:hover{
+    border: 1px solid rgb(59, 104, 226);
 }
