@@ -12,7 +12,7 @@
         <label for="">Nome</label>
         <input class="input" type="text">
         <label for="">Endereço</label>
-        <input class="input" type="text">
+        <input class="input" id="endereco type="text">
         <label for="">CEP</label>
         <input class="input" type="text" id="cep" oninput=mascara_cep() maxlength="10">
         <label for="">CPF</label>
@@ -25,5 +25,34 @@
         <input class="input" type="text" id="codigo" oninput=mascara_codigo() maxlength="20">
         <a href="index2.html" id="botao">Próxima pagina</a>
     </div>
+
+    <script> 
+        document.getElementById('formulario').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById('nome').value;
+        const endereco =document.getElementById('endereco').value;
+        const cep= document.getElementById('cep').value;
+        const cpf= document.getElementById('cpf').value;
+        const telefone= document.getElementById('telefone').value;
+        const cnpj = document.getElementById('cnpj').value;
+        const codigo= document.getElementById('codigo').value;
+
+        localStorage.setItem('nome', nome);
+        localStorage.setItem('endereco', endereco);
+        localStorage.setItem('cep', cep);
+        localStorage.setItem('cpf', cpf);
+        localStorage.setItem('telefone', telefone);
+        localStorage.setItem('cnpj', cnpj);
+        localStorage.setItem('codigo', codigo);
+
+        alert('Indormações enviadas com sucesso!');
+        
+        window.location.href = 'html2.html';
+
+    });
+    </script>
+
 </body>
 </html>
+

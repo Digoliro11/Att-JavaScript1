@@ -8,6 +8,60 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="index.html" id="botao">voltar</a>
+    <div id="formulario2">
+        <label for="">Dados</label>
+        <label for="">Nome</label>
+        <input class="input" type="text">
+        <label for="">Endereço</label>
+        <input class="input" type="text">
+        <label for="">CEP</label>
+        <input class="input" type="text" id="cep" oninput=mascara_cep() maxlength="10">
+        <label for="">CPF</label>
+        <input class="input" type="text" id="cpf" oninput=mascara_cpf() maxlength="14">
+        <label for="">Telefone</label>
+        <input class="input" type="tel" placeholder="(31)99999-9999" id="telefone"  oninput=mascara_telefone() maxlength="14">
+        <label for="">CNPJ</label>
+        <input class="input" type="text" id="cnpj" oninput=mascara_cnpj() maxlength="18">
+        <label for="">Código</label>
+        <input class="input" type="text" id="codigo" oninput=mascara_codigo() maxlength="20">
+        <a href="index.html" id="botao">voltar</a>
+    </div>
+
+    <script>
+        document.getElementById('formulario').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        function exibirInformacoes() {
+            const nome = localStorage.getItem('nome');
+            const endereco =localStorage.getItem('endereco');
+            const cep= localStorage.getItem('cep');
+            const cpf= localStorage.getItem('cpf');
+            const telefone= localStorage.getItem('telefone');
+            const cnpj = localStorage.getItem('cnpj');
+            const codigo= localStorage.getItem('codigo');
+
+            const informacoesDiv = document.getElementById('informacoes');
+            informacoesDiv.innerHTML = '
+                <p>
+            '
+        
+        }
+        
+
+        localStorage.setItem('nome', nome);
+        localStorage.setItem('endereco', endereco);
+        localStorage.setItem('cep', cep);
+        localStorage.setItem('cpf', cpf);
+        localStorage.setItem('telefone', telefone);
+        localStorage.setItem('cnpj', cnpj);
+        localStorage.setItem('codigo', codigo);
+
+        alert('Indormações enviadas com sucesso!');
+        
+        window.location.href = 'html2.html';
+
+        });
+    </script>
+
 </body>
 </html>
